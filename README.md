@@ -5,7 +5,7 @@ This is a PyGame program that demostrates the pygame features:
 - collisions
 - game theory
 - sounds (background and sound effects)
-- buttons in pygame with game functionality
+- button class in pygame with game functionality
 
 Here is Slinky.  He is the inspiration for the character.
 ![Slinky](Real_Slinky.jpg)
