@@ -2,8 +2,8 @@ import pygame
 import random
 
 pygame.init()
-WINDOW_WIDTH = 800
-WINDOW_HEIGHT = 500
+WINDOW_WIDTH = 900
+WINDOW_HEIGHT = 600
 screen = pygame.display.set_mode((WINDOW_WIDTH, WINDOW_HEIGHT))
 pygame.display.set_caption("Feed Slinky")
 pygame.display.set_icon(pygame.image.load("slinky.png"))
@@ -70,10 +70,10 @@ pygame.mixer.music.set_volume(0.2)
 pygame.mixer.music.play(-1)
 
 system_font = pygame.font.SysFont("roboto.ttf", 40)
-title_text = system_font.render("FEED SLINKY", True, "darkblue")
+title_text = system_font.render("FEED SLINKY", True, "indigo")
 title_text_rect = title_text.get_rect()
 title_text_rect.center = (WINDOW_WIDTH // 2, 30)
-score_text = system_font.render(f"Score: {score}", True, "darkblue")
+score_text = system_font.render(f"Score: {score}", True, "indigo")
 score_rect = score_text.get_rect()
 score_rect.center = (WINDOW_WIDTH - 100, 30)
 game_over_text = system_font.render("YOU WIN!", True, "darkblue")
@@ -117,13 +117,13 @@ while running:
             running = False
         if reply_button.update():
             score = 0
-            score_text = system_font.render(f"Score: {score}", True, "darkblue")
+            score_text = system_font.render(f"Score: {score}", True, "indigo")
             game_over = False
             bone_rect.x = random.randint(0, WINDOW_WIDTH - bone_rect.width)
             bone_rect.y = random.randint(60, WINDOW_HEIGHT - bone_rect.height)
             pygame.mixer.music.play(-1)
 
-    pygame.draw.line(screen, "darkblue", (0, 60), (WINDOW_WIDTH, 60), 5)
+    pygame.draw.line(screen, "indigo", (0, 60), (WINDOW_WIDTH, 60), 5)
 
     # check if the score is 10 or more
     if score >= 10:
@@ -165,7 +165,7 @@ while running:
         bone_rect.y = random.randint(60, WINDOW_HEIGHT - bone_rect.height)
         pygame.mixer.Sound("bone.mp3").play()
         score += 1
-        score_text = system_font.render(f"Score: {score}", True, "darkblue")
+        score_text = system_font.render(f"Score: {score}", True, "indigo")
 
     pygame.display.flip()
     dt = clock.tick(60) / 1000  # Convert milliseconds to seconds
